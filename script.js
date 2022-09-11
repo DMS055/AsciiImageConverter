@@ -19,11 +19,42 @@ class Converter {
         this.#pixels = this.#ctx.getImageData(0, 0, this.#width, this.#height);
     }
 
+    #character(c) {
+        if (c > 250) return "@";
+        else if (c < 240) return "*";
+        else if (c < 220) return "+";
+        else if (c < 200) return "#";
+        else if (c < 180) return "$";
+        else if (c < 160) return "%";
+        else if (c < 140) return "&";
+        else if (c < 120) return "!";
+        else if (c < 100) return "?";
+        else if (c < 80) return ">";
+        else if (c < 60) return "<";
+        else if (c < 40) return "/";
+        else if (c < 20) return "W";
+        else return '';
+    }
+
     #iterate(size) {
         this.#cellArray = [];
         for (let x = 0; x < this.#pixels.width; x += size) {
             for (let y = 0; y < this.#pixels.height; y += size) {
-                // Now get the colors
+                const posX = x * 4; 
+                const posY = y * 4;
+                const pos = (posY * this.#pixels.width) + posX;
+
+                if (this.#pixels.data[pos + 3] > 128) {
+                    const R = this.#pixels.data[pos];
+                    const G = this.#pixels.data[pos + 1];
+                    const B = this.#pixels.data[pos + 2];
+                    const total = R + G + B;
+                    const avrgValue = total / 3;
+                    const color = "rgb(" + R + "," + G + "," + B + ")";
+                    const character = this.#charify(avrgValue);
+                    this.#cellArray.push(new Cell(x, y, character, color));
+                    // Write Cell constructor
+                }
             }
         }
     }
