@@ -15,7 +15,17 @@ class Converter {
         this.#ctx = ctx;
         this.#width = width;
         this.#height = height;
-        this.#ctx.drawImage(img, 0, 0, this.#width, this.#height)
+        this.#ctx.drawImage(img, 0, 0, this.#width, this.#height);
+        this.#pixels = this.#ctx.getImageData(0, 0, this.#width, this.#height);
+    }
+
+    #iterate(size) {
+        this.#cellArray = [];
+        for (let x = 0; x < this.#pixels.width; x += size) {
+            for (let y = 0; y < this.#pixels.height; y += size) {
+                // Now get the colors
+            }
+        }
     }
 }
 
