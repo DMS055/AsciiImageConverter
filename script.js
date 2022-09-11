@@ -23,6 +23,5 @@ let apply;
 img.onload = function initialize() {
     canvas.width = img.width;
     canvas.height = img.height;
-    ctx.drawImage(img, 0, 0);
     apply = new Converter(ctx, img.width, img.height);
 }
