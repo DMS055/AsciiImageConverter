@@ -74,11 +74,15 @@ class Converter {
     }
     #drawText() {
         this.#ctx.clearRect(0, 0, this.#width, this.#height);
-        // TODO: print the symbols
+        for (let i = 0; i < this.#cellArray.length; i++) {
+            this.#cellArray[i].draw(this.#ctx);
+        }
+        // ! Fix a bug with the symbols
     }
 
     draw(size) {
         this.#iterate(size);
+        this.#drawText();
     }
 }
 
