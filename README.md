@@ -1,1 +1,1 @@
-# asciiimageconverter
+# AsciiImageConverter
