@@ -19,7 +19,6 @@ class Cell {
 
 class Converter {
     #cellArray = [];
-    #chars = [];
     #pixels = [];
     #ctx;
     #width;
