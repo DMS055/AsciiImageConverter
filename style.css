@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 html {
@@ -12,8 +13,12 @@ html {
     overflow: hidden;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
+.landing {
+    height: 100vh;
+    width: 100%;
+    background: #fff;
+    z-index: 100;
+    color: #000;
 }
 
 .container {
@@ -21,6 +26,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: -100;
 }
 
 #canv1 {
