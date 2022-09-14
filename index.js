@@ -16,6 +16,8 @@ class Cell {
         this.color = color;
     }
     draw(ctx) {
+        ctx.fillStyle = "rgba(200, 200, 200, 0.4)";
+        ctx.fillText(this.character, this.x + 1.2, this.y + 1);
         ctx.fillStyle = this.color;
         ctx.fillText(this.character, this.x, this.y);
     }
@@ -37,18 +39,18 @@ class Converter {
 
     #charify(c) {
         if (c > 250) return "@";
-        else if (c < 240) return "*";
-        else if (c < 220) return "+";
-        else if (c < 200) return "#";
-        else if (c < 180) return "$";
-        else if (c < 160) return "%";
-        else if (c < 140) return "&";
-        else if (c < 120) return "!";
-        else if (c < 100) return "?";
-        else if (c < 80) return ">";
-        else if (c < 60) return "<";
-        else if (c < 40) return "/";
-        else if (c < 20) return "W";
+        else if (c > 240) return "*";
+        else if (c > 220) return "+";
+        else if (c > 200) return "#";
+        else if (c > 180) return "$";
+        else if (c > 160) return "%";
+        else if (c > 140) return "&";
+        else if (c > 120) return "!";
+        else if (c > 100) return "?";
+        else if (c > 80) return ">";
+        else if (c > 60) return "<";
+        else if (c > 40) return "/";
+        else if (c > 20) return "W";
         else return '';
     }
 
@@ -68,8 +70,7 @@ class Converter {
                     const avrgValue = total / 3;
                     const color = "rgb(" + R + "," + G + "," + B + ")";
                     const character = this.#charify(avrgValue);
-                    // Possibly add "if (total > 220)""
-                    this.#cellArray.push(new Cell(x, y, character, color));
+                    if (total > 180) this.#cellArray.push(new Cell(x, y, character, color));
                 }
             }
         }
@@ -80,7 +81,6 @@ class Converter {
         for (let i = 0; i < this.#cellArray.length; i++) {
             this.#cellArray[i].draw(this.#ctx);
         }
-        // ! Fix a bug with the symbols
     }
 
     draw(size) {
@@ -97,12 +97,14 @@ function handleInput () {
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
     } else {
         label.innerHTML = 'Resolution: ' + slider.value + 'px';
-    }
+        apply.draw(parseInt(slider.value));
+        ctx.font = parseInt(slider.value) * 1.3 + 'px Arial'
+    }   
 }
 
 img.onload = function initialize() {
     canvas.width = img.width;
     canvas.height = img.height;
     apply = new Converter(ctx, img.width, img.height);
-    apply.draw(5);
+    handleInput();
 }
