@@ -47,6 +47,30 @@ html {
     font-weight: 500;
 }
 
+.drop .icon {
+    font-size: 50px;
+    color: #134f95;
+}
+
+.drop .header {
+    font-size: 20px;
+    font-weight: 500;
+    color: #e5e5e5;
+}
+
+.drop .format {
+    font-size: 12px;
+    font-weight: 600;
+    color: #161718;
+    margin: 10px 0 15px 0;
+}
+
+.drop .button {
+    color: #134f95;
+    font-weight: 600;
+    cursor: pointer;
+}
+
 .container {
     position: absolute;
     top: 50%;
