@@ -9,7 +9,7 @@
 
 html {
     height: 100%;
-    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    background: radial-gradient(ellipse at bottom, #2C3333 0%, #090a0f 100%);
 }
 
 .landing {
@@ -20,21 +20,22 @@ html {
     justify-content: center;
     min-height: 100vh;
     flex-direction: column;
-    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    background: radial-gradient(ellipse at bottom, #2C3333 0%, #090a0f 100%);
 }
 
 .landingContainer {
     max-width: 650px;
     width: 100%;
     padding: 30px;
-    background: rgb(55, 55, 55);
+    background: #2C3333;
     border-radius: 20px;
-    box-shadow: rgba(27, 27, 27, 0.25) 0px 8px 24px;
+    box-shadow: rgba(18, 18, 18, 0.25) 0px 8px 24px;
 }
 
 .drop {
     height: 400px;
-    border: 3px dashed #161718;
+    border: 3px dashed #A8B3B3;
+    border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,13 +44,16 @@ html {
 }
 
 .landing h3 {
-    margin-bottom: 20px;
-    font-weight: 500;
+    margin-bottom: 25px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 24px;
 }
 
 .drop .icon {
     font-size: 50px;
-    color: #134f95;
+    color: #6184D8;
 }
 
 .drop .header {
@@ -59,16 +63,20 @@ html {
 }
 
 .drop .format {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
-    color: #161718;
+    color: #000;
     margin: 10px 0 15px 0;
 }
 
 .drop .button {
-    color: #134f95;
+    color: #6184D8;
     font-weight: 600;
     cursor: pointer;
+}
+
+.drop.active {
+    border: 4px solid #6184D8;
 }
 
 .container {
@@ -80,7 +88,7 @@ html {
 }
 
 #canv1 {
-    border: 1.5px solid white;
+    border: 1.5px solid #fff;
     border-radius: 2px;
 }
 
@@ -90,7 +98,7 @@ html {
 
 .controls > label {
     width: 45%;
-    color: white;
+    color: #fff;
     font-size: 14px;
 }
 
@@ -99,7 +107,7 @@ html {
     -moz-appearance: none;
     width: 85%;
     height: 25%;
-    background-color: #c1bfbf;
+    background-color: #A8B3B3;
     border-radius: 8px;
     outline: none;
 }
@@ -109,7 +117,7 @@ html {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #2150dd;
+    background-color: #6184D8;
     cursor: pointer;
     border: none;
 }
@@ -119,7 +127,7 @@ html {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #2150dd;
+    background-color: #6184D8;
     cursor: pointer;
     border: none;
 }
@@ -129,14 +137,14 @@ html {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #2150dd;
+    background-color: #6184D8;
     cursor: pointer;
     border: none;
 }
 
 .sliderBox input[type="range"]:active::-webkit-slider-thumb {
     background-color: #fff;
-    border: 2px solid #2150dd;
+    border: 2px solid #6184D8;
 }
 
 .sliderBox {
