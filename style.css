@@ -9,7 +9,7 @@
 
 html {
     height: 100%;
-    background: radial-gradient(ellipse at bottom, #2C3333 0%, #090a0f 100%);
+    background: #000;
 }
 
 .landing {
@@ -21,6 +21,10 @@ html {
     min-height: 100vh;
     flex-direction: column;
     background: radial-gradient(ellipse at bottom, #2C3333 0%, #090a0f 100%);
+}
+
+.landing.active {
+    visibility: hidden;
 }
 
 .landingContainer {
@@ -65,7 +69,7 @@ html {
 .drop .format {
     font-size: 14px;
     font-weight: 600;
-    color: #000;
+    color: #151515;
     margin: 10px 0 15px 0;
 }
 
@@ -76,7 +80,7 @@ html {
 }
 
 .drop.active {
-    border: 4px solid #6184D8;
+    border: 3px solid #6184D8;
 }
 
 .container {
@@ -97,16 +101,17 @@ html {
 }
 
 .controls > label {
-    width: 45%;
+    width: 55%;
     color: #fff;
-    font-size: 14px;
+    font-size: 16px;
+    letter-spacing: 1px;
 }
 
 .sliderBox input[type="range"] {
     -webkit-appearance: none;
     -moz-appearance: none;
     width: 85%;
-    height: 25%;
+    height: 30%;
     background-color: #A8B3B3;
     border-radius: 8px;
     outline: none;
@@ -114,8 +119,8 @@ html {
 
 .sliderBox input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     background-color: #6184D8;
     cursor: pointer;
@@ -124,8 +129,8 @@ html {
 
 .sliderBox input[type="range"]::-moz-range-thumb {
     -moz-appearance: none;
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     background-color: #6184D8;
     cursor: pointer;
@@ -134,8 +139,8 @@ html {
 
 .sliderBox input[type="range"]::-ms-thumb {
     appearance: none;
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     background-color: #6184D8;
     cursor: pointer;
@@ -144,7 +149,7 @@ html {
 
 .sliderBox input[type="range"]:active::-webkit-slider-thumb {
     background-color: #fff;
-    border: 2px solid #6184D8;
+    border: 3px solid #6184D8;
 }
 
 .sliderBox {
