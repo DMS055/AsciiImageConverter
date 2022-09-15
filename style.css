@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    overflow: hidden;
 }
 
 html {
@@ -159,4 +160,11 @@ html {
     justify-content: space-around;
     display: flex;
     border-radius: 5px;
+}
+
+p#hidden {
+    visibility: hidden;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
 }

@@ -40,8 +40,7 @@ drop.addEventListener("drop", (e) => {
     process();
 });
 
-var fileURL;
-function process() {
+export function process() {
     let fileType = file.type;
 	let valid = ["image/png", "image/jpg", "image/jpeg"];
 
@@ -49,8 +48,11 @@ function process() {
 		let fileReader = new FileReader();
 
 		fileReader.onload = () => {
-			window.fileURL = fileReader.result;
-			// console.log(fileURL);
+			let fileURL = fileReader.result;
+			//console.log(fileURL);
+            const pTag = document.getElementById("hidden");
+            pTag.textContent = fileURL;
+
 			landing.remove();
 		};
 		fileReader.readAsDataURL(file);
@@ -59,5 +61,5 @@ function process() {
 	}
 }
 
-export let fileString = fileURL;
+
 
